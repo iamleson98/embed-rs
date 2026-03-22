@@ -1,0 +1,4 @@
+[wokwi]
+version  = 1
+firmware = "../build/thermal_monitor.elf"
+elf      = "../build/thermal_monitor.elf"

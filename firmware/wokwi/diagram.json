@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "author": "thermal-monitor",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-stm32-blue-pill",
+      "id": "stm32",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": -80,
+      "left": 200,
+      "attrs": {
+        "temperature": "25"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "fan_led",
+      "top": -80,
+      "left": 340,
+      "attrs": {
+        "color": "green",
+        "label": "FAN PWM"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -40,
+      "left": 260,
+      "attrs": {
+        "resistance": "10000"
+      }
+    }
+  ],
+  "connections": [
+    ["stm32:PA0", "ntc1:OUT", "orange", ["v:40"]],
+    ["ntc1:VCC", "stm32:3V3", "red", []],
+    ["ntc1:GND", "stm32:GND", "black", []],
+    ["stm32:PA6", "r1:1", "green", ["v:-20"]],
+    ["r1:2", "fan_led:A", "green", []],
+    ["fan_led:C", "stm32:GND", "black", []]
+  ],
+  "serialMonitor": {
+    "display": "auto",
+    "newline": "lf"
+  }
+}
