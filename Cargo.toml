@@ -1,6 +1,13 @@
 [package]
-name = "embed"
-version = "0.1.0"
-edition = "2024"
+name = "embed-rs"
+version = "1.0.0"
+edition = "2021"
+authors = ["Embedded Systems Team"]
+description = "Multi-language embedded systems examples for STM32F103"
+
+[workspace]
+members = [
+    "firmware-rust",
+]
 
 [dependencies]
