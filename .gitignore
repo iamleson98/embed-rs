@@ -1,1 +1,23 @@
+# Rust
 /target
+Cargo.lock
+
+# C/C++ Build Artifacts
+build/
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

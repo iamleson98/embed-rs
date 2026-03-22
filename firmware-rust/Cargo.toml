@@ -1,0 +1,25 @@
+[package]
+name = "thermal-monitor-rust"
+version = "2.0.0"
+edition = "2021"
+authors = ["Embedded Rust Team"]
+
+[dependencies]
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
+panic-halt = "0.2"
+embedded-hal = "1.0"
+nb = "1.0"
+
+# STM32F1 HAL
+stm32f1xx-hal = { version = "0.10", features = ["stm32f103", "rt", "medium"] }
+
+[profile.release]
+opt-level = "z"       # Optimize for size
+lto = true            # Link-time optimization
+codegen-units = 1     # Better optimization
+debug = true          # Keep debug symbols
+strip = false         # Don't strip symbols
+
+[profile.dev]
+opt-level = 1         # Some optimization for development
